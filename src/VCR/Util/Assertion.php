@@ -16,12 +16,12 @@ class Assertion extends BaseAssertion
      *
      * @param  mixed  $value Variable to check for a callable.
      * @param  string $message Exception message to show if value is not a callable.
-     * @param  null   $propertyPath
+     * @param  string|null   $propertyPath
      * @throws \VCR\VCRException If specified value is not a callable.
      *
      * @return void
      */
-    public static function isCallable($value, $message = null, $propertyPath = null)
+    public static function isCallable($value, $message = null, string $propertyPath = null)
     {
         if (! is_callable($value)) {
             throw new VCRException($message, self::INVALID_CALLABLE, $propertyPath);
